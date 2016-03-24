@@ -19,7 +19,6 @@ function fireNotice(type, content, settings) {
     }
 
     Notification.instance(container).addNotice(notice);
-
 }
 
 let Notify = {};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AlertNode from 'rs-alert';
 
 export default class Alert extends Component {
     static propTypes = {
@@ -18,7 +19,7 @@ export default class Alert extends Component {
     }
 
 	handleClick() {
-        this.props.onClose(this.props.notice.id);
+        this.props.onClose(this.props.id);
 	}
 
 	clearTimer() {
@@ -30,9 +31,10 @@ export default class Alert extends Component {
 
 	componentDidMount() {
         let { duration } = this.props;
+        let self = this;
 		if (duration !== 0) {
 			this.timer = setTimeout(() => {
-				this.onClose();
+				self.props.onClose(self.props.id);
 			}, duration * 1000);
 		}
 	}
@@ -46,14 +48,13 @@ export default class Alert extends Component {
 	}
 
     render() {
-		let { type, prefixName } = this.props,
-            cls = `${prefixName}-alert ${prefixName}-alert-${type}`;
+		let { type, prefixName } = this.props;
 
         return (
-            <div className={cls}>
+            <AlertNode prefixName={prefixName} myStyle={type}>
 				{ this.props.children }
 				<i className="close" onClick={this.handleClick}>&times;</i>
-            </div>
+            </AlertNode>
         );
     }
 }

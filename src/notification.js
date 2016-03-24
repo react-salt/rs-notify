@@ -38,7 +38,7 @@ export default class Notification extends React.Component {
 
     removeNotice(id) {
         this.setState({
-            notices: this.state.notices.filter(notice => notice.id != i)
+            notices: this.state.notices.filter(notice => notice.id != id)
         });
     }
 
@@ -97,7 +97,7 @@ Notification.instance = function( container = document.body ) {
         }
 
         Notification.containerMap['noticelist-' + ++Notification.key] = notices;
-        container.className = container.className + ' noticilist-' + Notification.key;
+        container.className = container.className + ' noticelist-' + Notification.key;
         return notices;
     }
 }

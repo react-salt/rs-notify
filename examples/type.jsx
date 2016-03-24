@@ -6,7 +6,7 @@ export default class Type extends Component {
     info() {
         Notify.info('系统通知:普通类型');
     }
-    succcess() {
+    success() {
         Notify.success('系统通知:成功类型');
     }
     warning() {

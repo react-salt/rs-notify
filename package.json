@@ -1,6 +1,6 @@
 {
   "name": "rs-notify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./dist/notify.js",
   "scripts": {
@@ -16,10 +16,11 @@
     "src/"
   ],
   "dependencies": {
-    "rs-util": "^0.1.x",
-    "rs-ui-core": "^0.1.x",
     "react": "^0.14.x",
-    "react-dom": "^0.14.x"
+    "react-dom": "^0.14.x",
+    "rs-alert": "^0.0.2",
+    "rs-ui-core": "^0.1.x",
+    "rs-util": "^0.1.x"
   },
   "devDependencies": {
     "rs-button": "^0.1.0",
